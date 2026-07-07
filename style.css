@@ -336,8 +336,8 @@ input:focus-visible {
   inset: 0;
   /* Editorial campus-style gradient stand-in for a photograph */
   background:
-    radial-gradient(circle at 20% 20%, rgba(231, 117, 0, 0.35), transparent 55%),
-    linear-gradient(135deg, #1c1c1c 0%, #2c2c2c 55%, #3a3a3a 100%);
+    radial-gradient(circle at 20% 20%, rgba(80, 41, 2, 0.35), transparent 55%),
+    linear-gradient(135deg, #656464 0%, #656464 55%, #656464 100%);
   background-size: cover;
 }
 
@@ -406,9 +406,31 @@ input:focus-visible {
   position: absolute;
   bottom: 28px;
   left: 50%;
-  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
   color: var(--color-white);
-  animation: bob 2.2s ease-in-out infinite;
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(4px);
+}
+
+.hero__scroll-cue:hover {
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.45);
+}
+
+.hero__scroll-cue__icon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }
 
 @keyframes bob {
