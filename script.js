@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentSlide = 0;
   let autoplayTimer = null;
-  const AUTOPLAY_DELAY = 6000; // ms between automatic slide changes
+  const AUTOPLAY_DELAY = 5000; // ms between automatic slide changes
 
   function goToSlide(index) {
     if (!slides.length) return;
