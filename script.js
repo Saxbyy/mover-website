@@ -1,9 +1,66 @@
 /* =========================================================
-   Ridgeview University — site interactions
+   Movers Institute of Technology and Education — site interactions
    Vanilla JS, no dependencies.
 ========================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* -----------------------------------------------------
+     0. Hero image carousel
+  ----------------------------------------------------- */
+  const heroSlider = document.getElementById('hero-slider');
+  const slides = heroSlider ? Array.from(heroSlider.querySelectorAll('.hero__slide')) : [];
+  const dots = heroSlider ? Array.from(heroSlider.querySelectorAll('.hero__dot')) : [];
+  const prevBtn = document.getElementById('hero-prev');
+  const nextBtn = document.getElementById('hero-next');
+
+  let currentSlide = 0;
+  let autoplayTimer = null;
+  const AUTOPLAY_DELAY = 6000; // ms between automatic slide changes
+
+  function goToSlide(index) {
+    if (!slides.length) return;
+    // Wrap around so index always lands within [0, slides.length - 1]
+    currentSlide = (index + slides.length) % slides.length;
+
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('is-active', i === currentSlide);
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('is-active', i === currentSlide);
+      dot.setAttribute('aria-selected', String(i === currentSlide));
+    });
+  }
+
+  function nextSlide() { goToSlide(currentSlide + 1); }
+  function prevSlide() { goToSlide(currentSlide - 1); }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(nextSlide, AUTOPLAY_DELAY);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) clearInterval(autoplayTimer);
+  }
+
+  if (slides.length) {
+    if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); startAutoplay(); });
+    if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); startAutoplay(); });
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        goToSlide(Number(dot.dataset.slide));
+        startAutoplay();
+      });
+    });
+
+    // Pause autoplay while the user's mouse is over the hero
+    heroSlider.addEventListener('mouseenter', stopAutoplay);
+    heroSlider.addEventListener('mouseleave', startAutoplay);
+
+    startAutoplay();
+  }
 
   /* -----------------------------------------------------
      1. Mobile burger menu toggle
