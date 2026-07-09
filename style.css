@@ -705,38 +705,6 @@ input:focus-visible {
 }
 
 /* =========================================================
-   8. STATS STRIP
-========================================================= */
-.stats {
-  background: var(--color-black);
-  color: var(--color-white);
-  padding: 56px 0;
-}
-
-.stats__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-  text-align: center;
-}
-
-.stat__number {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 2vw + 1rem, 2.6rem);
-  color: var(--color-orange);
-  font-weight: 700;
-}
-
-.stat__label {
-  display: block;
-  margin-top: 8px;
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.75);
-  letter-spacing: 0.02em;
-}
-
-/* =========================================================
    9. FOOTER
 ========================================================= */
 .site-footer {
@@ -746,29 +714,29 @@ input:focus-visible {
 
 .site-footer__top {
   display: grid;
-  grid-template-columns: 1.6fr repeat(4, 1fr);
-  gap: 32px;
-  padding: 64px 24px 48px;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 40px;
+  padding: 72px 24px 56px;
 }
 
 .footer-col h4 {
   color: var(--color-white);
   font-family: var(--font-sans);
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 }
 
 .footer-col ul {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .footer-col a {
-  font-size: 0.92rem;
-  color: rgba(255,255,255,0.75);
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
   transition: color var(--transition);
 }
 
@@ -777,35 +745,60 @@ input:focus-visible {
 .footer-col--brand .brand__name,
 .footer-col--brand .brand__sub { color: var(--color-white); }
 
+.footer-col--brand .brand__sub { font-size: 0.8rem; }
+
 .footer-address {
   font-style: normal;
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.65);
-  margin: 18px 0 20px;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.75);
+  margin: 20px 0 12px;
   line-height: 1.6;
 }
 
-.social-icons {
-  display: flex;
-  gap: 12px;
+/* "View Map / Directions" link under the address */
+.footer-maps-link {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-orange);
+  margin-bottom: 16px;
+  transition: opacity var(--transition);
 }
 
-.social-icons a {
+.footer-maps-link:hover { opacity: 0.75; }
+
+.footer-tel {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 20px;
+}
+
+/* Social links formatted as a text path: "Connect Facebook / Instagram / X / YouTube" */
+.footer-social-links {
+  font-size: 1.05rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 50%;
-  color: var(--color-white);
-  transition: background var(--transition), border-color var(--transition);
+  gap: 8px;
+  color: rgba(255,255,255,0.45);
 }
 
-.social-icons a:hover {
-  background: var(--color-orange);
-  border-color: var(--color-orange);
+.footer-social-links__label {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  margin-right: 4px;
 }
+
+.footer-social-links a {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.85);
+  transition: color var(--transition);
+}
+
+.footer-social-links a:hover { color: var(--color-orange); }
 
 .site-footer__bottom {
   border-top: 1px solid rgba(255,255,255,0.12);
@@ -816,17 +809,21 @@ input:focus-visible {
   flex-wrap: wrap;
   gap: 12px;
   justify-content: space-between;
-  padding: 20px 24px;
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.55);
+  padding: 24px;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.6);
 }
 
 .legal-links {
   display: flex;
-  gap: 20px;
+  gap: 24px;
 }
 
-.legal-links a { color: rgba(255,255,255,0.55); transition: color var(--transition); }
+.legal-links a {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.6);
+  transition: color var(--transition);
+}
 .legal-links a:hover { color: var(--color-orange); }
 
 /* =========================================================
