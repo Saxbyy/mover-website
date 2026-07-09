@@ -98,20 +98,49 @@
     <!-- =====================================================
          HERO — full-bleed image, headline, CTA
     ====================================================== -->
-    <section class="hero" aria-label="Introduction">
-      <div class="hero__media" aria-hidden="true"></div>
+    <section class="hero" aria-label="Introduction" id="hero-slider">
+
+      <!-- Slides. Swap each src="" for your own photo, e.g. Assets/hero-1.jpg -->
+      <div class="hero__slider">
+        <div class="hero__slide is-active" data-slide="0">
+          <img class="hero__slide-img" src="Assets/img1.jpg" alt="Movers Institute campus photo 1">
+        </div>
+        <div class="hero__slide" data-slide="1">
+          <img class="hero__slide-img" src="Assets/img2.png" alt="Movers Institute campus photo 2">
+        </div>
+        <div class="hero__slide" data-slide="2">
+          <img class="hero__slide-img" src="Assets/img3.png" alt="Movers Institute campus photo 3">
+        </div>
+      </div>
+
+      <!-- Dark gradient overlay so text stays readable over any photo -->
       <div class="hero__scrim" aria-hidden="true"></div>
+
+      <!-- Prev / next arrows -->
+      <button class="hero__arrow hero__arrow--prev" id="hero-prev" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button class="hero__arrow hero__arrow--next" id="hero-next" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
       <div class="container hero__content">
         <p class="hero__eyebrow">Founded 1804</p>
         <h1 class="hero__headline">In the nation's service,<br>and the service of humanity.</h1>
         <p class="hero__dek">Movers Institute of Technology and Education is a community of learners and innovators dedicated to transforming lives through learn, lead, and transform.</p>
         <a href="#admission" class="btn btn--primary">Explore Admission</a>
       </div>
-      <a href="#news" class="hero__scroll-cue" aria-label="Scroll to content">
-        <svg class="hero__scroll-cue__icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 4v16m0 0-6-6m6 6 6-6" />
-        </svg>
-      </a>
+
+      <!-- Slide indicator dots -->
+      <div class="hero__dots" id="hero-dots" role="tablist" aria-label="Slide navigation">
+        <button class="hero__dot is-active" data-slide="0" role="tab" aria-selected="true" aria-label="Go to slide 1"></button>
+        <button class="hero__dot" data-slide="1" role="tab" aria-selected="false" aria-label="Go to slide 2"></button>
+        <button class="hero__dot" data-slide="2" role="tab" aria-selected="false" aria-label="Go to slide 3"></button>
+      </div>
     </section>
 
     <!-- =====================================================
@@ -274,30 +303,6 @@
         </ul>
       </div>
     </section>
-
-    <!-- =====================================================
-         BY THE NUMBERS — quick stats strip
-    ====================================================== -->
-    <section class="stats" aria-label="University statistics">
-      <div class="container stats__grid">
-        <div class="stat">
-          <span class="stat__number">2,600</span>
-          <span class="stat__label">Undergraduate students</span>
-        </div>
-        <div class="stat">
-          <span class="stat__number">50+</span>
-          <span class="stat__label">Fields of study</span>
-        </div>
-        <div class="stat">
-          <span class="stat__number">1:6</span>
-          <span class="stat__label">Faculty to student ratio</span>
-        </div>
-        <div class="stat">
-          <span class="stat__number">Php 12M</span>
-          <span class="stat__label">Annual research funding</span>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- =====================================================
@@ -314,25 +319,28 @@
             <span class="brand__sub">Institute of Technology and Education</span>
           </span>
         </a>
+
         <address class="footer-address">
-          1 Metrocor Drive St., Metrocor South Gate Home, <br>
-          Almanza 1, Las Piñas City<br>
-          Tel.No.:(02) 7257-7896
+          1 Metrocor Drive St., Metrocor South Gate Home, Almanza 1, Las Piñas City<br>
+          
         </address>
-        <div class="social-icons" aria-label="Social media">
-          <a href="#" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5H16V3.6C15.6 3.5 14.7 3.4 13.7 3.4c-2.1 0-3.6 1.3-3.6 3.7v2.8H7.4V13H10v8h3.5z"/></svg>
-          </a>
-          <a href="#" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>
-          </a>
-          <a href="#" aria-label="X / Twitter">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 3h3l-7.5 8.6L22 21h-6.6l-5.2-6.4L4.2 21H1l8-9.2L2 3h6.8l4.7 5.8L18 3z"/></svg>
-          </a>
-          <a href="#" aria-label="YouTube">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="4"></rect><polygon points="10 9 15 12 10 15" fill="currentColor" stroke="none"></polygon></svg>
-          </a>
-        </div>
+
+        <a href="https://www.google.com/maps/place/Movers+Institute+of+Technology+and+Education/@14.4351358,121.0113363,18.75z/data=!4m6!3m5!1s0x3397d189ce1bc90b:0xf354a501d7cbfe47!8m2!3d14.4353897!4d121.0114589!16s%2Fg%2F11f9zq_hhs?entry=ttu&g_ep=EgoyMDI2MDcwNy4wIKXMDSoASAFQAw%3D%3D" class="footer-maps-link" target="_blank" rel="noopener">
+          View Map / Directions &rarr;
+        </a>
+
+        <p class="footer-tel">Tel. No.: (02) 7257-7896</p>
+
+        <p class="footer-social-links" aria-label="Social media">
+          <span class="footer-social-links__label">Connect</span>
+          <a href="https://www.facebook.com/MoversInternationalSchoolLASPINAS">Facebook</a>
+          <span aria-hidden="true">/</span>
+          <a href="#">Instagram</a>
+          <span aria-hidden="true">/</span>
+          <a href="#">X</a>
+          <span aria-hidden="true">/</span>
+          <a href="#">YouTube</a>
+        </p>
       </div>
 
       <div class="footer-col">
@@ -356,20 +364,14 @@
       </div>
 
       <div class="footer-col">
-        <h4>Campus Life</h4>
+        <h4>Campus Life &amp; About</h4>
         <ul>
+          <li><a href="#">Leadership</a></li>
+          <li><a href="#">Offices &amp; Services</a></li>
           <li><a href="#">Housing &amp; Dining</a></li>
           <li><a href="#">Athletics</a></li>
           <li><a href="#">Arts &amp; Culture</a></li>
           <li><a href="#">Health &amp; Wellness</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>About</h4>
-        <ul>
-          <li><a href="#">Leadership</a></li>
-          <li><a href="#">Offices &amp; Services</a></li>
           <li><a href="#">News</a></li>
           <li><a href="#">Careers</a></li>
         </ul>
